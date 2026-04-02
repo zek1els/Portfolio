@@ -31,8 +31,8 @@ export default function Home() {
           <span className="hero-greeting">Bonjour, je suis</span>
           <h1>Maxime Imbeault</h1>
           <p className="hero-subtitle">
-            Développeur Full-Stack passionné par la création d'applications web
-            modernes et performantes.
+            Étudiant en informatique au Cégep de Valleyfield, passionné par le
+            développement web et la création de bots Discord.
           </p>
           <div className="hero-actions">
             <Link to="/projects" className="btn btn-primary">
@@ -49,21 +49,21 @@ export default function Home() {
         <h2>A propos</h2>
         <div className="about-content">
           <p>
-            Je suis un développeur web full-stack spécialisé dans l'écosystème
-            JavaScript. J'aime concevoir des solutions élégantes à des problèmes
-            complexes en utilisant les technologies modernes comme React, Node.js
-            et MongoDB.
+            Étudiant en informatique, je développe des projets concrets pour
+            approfondir mes compétences. J'ai créé Kova, un bot Discord complet
+            avec interface web, ainsi que ce portfolio full-stack en React,
+            Node.js et MongoDB.
           </p>
           <div className="skills-grid">
             {[
+              'JavaScript',
               'React',
               'Node.js',
-              'MongoDB',
               'Express',
-              'JavaScript',
+              'MongoDB',
+              'Discord.js',
               'HTML/CSS',
               'Git',
-              'REST API',
             ].map((skill) => (
               <span key={skill} className="skill-item">
                 {skill}
