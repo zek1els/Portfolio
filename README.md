@@ -94,4 +94,4 @@ Le frontend est sur http://localhost:5173 et le backend sur http://localhost:500
 
 ## Déploiement
 
-Le site est déployé sur Render : https://portfolio-w8th.onrender.com/
+Le site est déployé sur mon domaine personel : https://maximeimbeault.xyz
