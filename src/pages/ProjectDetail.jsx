@@ -41,9 +41,13 @@ export default function ProjectDetail() {
         ← Retour aux projets
       </Link>
 
-      {project.imageUrl && (
+      {(project.imageUrl || project.emoji) && (
         <div className="detail-image">
-          <img src={project.imageUrl} alt={project.title} />
+          {project.emoji && !project.imageUrl ? (
+            <div className="detail-emoji">{project.emoji}</div>
+          ) : (
+            <img src={project.imageUrl} alt={project.title} />
+          )}
         </div>
       )}
 

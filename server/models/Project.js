@@ -7,6 +7,7 @@ const projectSchema = new mongoose.Schema(
     longDescription: { type: String, default: '' },
     technologies: [{ type: String }],
     imageUrl: { type: String, default: '' },
+    emoji: { type: String, default: '' },
     githubUrl: { type: String, default: '' },
     liveUrl: { type: String, default: '' },
     featured: { type: Boolean, default: false },

@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 export default function ProjectCard({ project }) {
   return (
     <article className="project-card">
-      {project.imageUrl && (
+      {(project.imageUrl || project.emoji) && (
         <div className="project-card-image">
-          <img src={project.imageUrl} alt={project.title} loading="lazy" />
+          {project.emoji && !project.imageUrl ? (
+            <div className="project-card-emoji">{project.emoji}</div>
+          ) : (
+            <img src={project.imageUrl} alt={project.title} loading="lazy" />
+          )}
           {project.featured && <span className="badge">Featured</span>}
         </div>
       )}
