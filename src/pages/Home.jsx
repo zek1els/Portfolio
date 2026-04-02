@@ -42,6 +42,22 @@ export default function Home() {
               Me contacter
             </Link>
           </div>
+          <div className="hero-socials">
+            <a
+              href="https://github.com/zek1els"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/maxime-imbeault-553b27309/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 

@@ -222,6 +222,18 @@ img {
   font-size: 1.1rem;
 }
 
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== Hero ===== */
 .hero-section {
   display: flex;
@@ -238,6 +250,7 @@ img {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
+  animation: fadeInUp 0.6s ease both;
 }
 
 .hero-content h1 {
@@ -249,6 +262,7 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: fadeInUp 0.6s ease 0.15s both;
 }
 
 .hero-subtitle {
@@ -257,6 +271,7 @@ img {
   max-width: 520px;
   margin: 0 auto 32px;
   line-height: 1.7;
+  animation: fadeInUp 0.6s ease 0.3s both;
 }
 
 .hero-actions {
@@ -264,6 +279,33 @@ img {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+  animation: fadeInUp 0.6s ease 0.45s both;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+  animation: fadeInUp 0.6s ease 0.6s both;
+}
+
+.hero-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+
+.hero-socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-light);
 }
 
 /* ===== About ===== */
