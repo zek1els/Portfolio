@@ -25,12 +25,12 @@ const projects = [
     description:
       'Mon site portfolio personnel construit avec la stack MERN (MongoDB, Express, React, Node.js).',
     longDescription:
-      "Ce portfolio est une application web monopage (SPA) que j'ai développée pour présenter mes projets. Le frontend utilise React avec React Router pour la navigation entre les pages, et le Context API pour gérer le thème sombre/clair. Le backend est une API REST faite avec Express et MongoDB qui stocke les projets et les messages du formulaire de contact. Le site inclut un formulaire de contact avec validation, un filtre par technologie sur la page projets, et un design responsive qui s'adapte à toutes les tailles d'écran. Le tout est déployé sur Render.",
+      "Ce portfolio est une application web monopage (SPA) que j'ai développée pour présenter mes projets. Le frontend utilise React avec React Router pour la navigation entre les pages, et le Context API pour gérer le thème sombre/clair. Le backend est une API REST faite avec Express et MongoDB qui stocke les projets et les messages du formulaire de contact. Le site inclut un formulaire de contact avec validation, un filtre par technologie sur la page projets, et un design responsive qui s'adapte à toutes les tailles d'écran. Le tout est auto-hébergé et exposé via Cloudflare Tunnel sur mon domaine personnel.",
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'CSS', 'Vite'],
     imageUrl: '',
     emoji: '🚀',
     githubUrl: 'https://github.com/zek1els/Portfolio',
-    liveUrl: 'https://portfolio-w8th.onrender.com',
+    liveUrl: 'https://maximeimbeault.xyz',
     featured: true,
   },
 ];

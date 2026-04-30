@@ -8,7 +8,7 @@ export default function ProjectCard({ project }) {
           {project.emoji && !project.imageUrl ? (
             <div className="project-card-emoji">{project.emoji}</div>
           ) : (
-            <img src={project.imageUrl} alt={project.title} loading="lazy" />
+            <img src={project.imageUrl} alt={project.title} />
           )}
           {project.featured && <span className="badge">Featured</span>}
         </div>

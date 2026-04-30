@@ -3,8 +3,8 @@ import Project from '../models/Project.js';
 
 const router = Router();
 
-// GET all projects
-router.get('/', async (_req, res) => {
+// liste tous les projets
+router.get('/', async (req, res) => {
   try {
     const projects = await Project.find().sort({ createdAt: -1 });
     res.json(projects);
@@ -13,18 +13,18 @@ router.get('/', async (_req, res) => {
   }
 });
 
-// GET single project
+// un projet par id
 router.get('/:id', async (req, res) => {
   try {
     const project = await Project.findById(req.params.id);
-    if (!project) return res.status(404).json({ error: 'Project not found' });
+    if (!project) return res.status(404).json({ error: 'Projet introuvable' });
     res.json(project);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// POST create project
+// crée un projet
 router.post('/', async (req, res) => {
   try {
     const project = await Project.create(req.body);
@@ -34,26 +34,23 @@ router.post('/', async (req, res) => {
   }
 });
 
-// PUT update project
+// modifie un projet
 router.put('/:id', async (req, res) => {
   try {
-    const project = await Project.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-    if (!project) return res.status(404).json({ error: 'Project not found' });
+    const project = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!project) return res.status(404).json({ error: 'Projet introuvable' });
     res.json(project);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
 });
 
-// DELETE project
+// supprime un projet
 router.delete('/:id', async (req, res) => {
   try {
     const project = await Project.findByIdAndDelete(req.params.id);
-    if (!project) return res.status(404).json({ error: 'Project not found' });
-    res.json({ message: 'Project deleted' });
+    if (!project) return res.status(404).json({ error: 'Projet introuvable' });
+    res.json({ message: 'Projet supprimé' });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

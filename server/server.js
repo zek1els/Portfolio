@@ -22,14 +22,14 @@ app.use(express.json());
 app.use('/api/projects', projectRoutes);
 app.use('/api/messages', messageRoutes);
 
-app.get('/api/health', (_req, res) => {
+app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Serve frontend in production
+// sert le frontend React en production
 const distPath = path.join(__dirname, '..', 'dist');
 app.use(express.static(distPath));
-app.get('/{*splat}', (_req, res) => {
+app.use((req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 

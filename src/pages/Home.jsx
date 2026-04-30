@@ -4,24 +4,24 @@ import ProjectCard from '../components/ProjectCard';
 import Loader from '../components/Loader';
 
 export default function Home() {
-  const [featuredProjects, setFeaturedProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [featured, setFeatured] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchFeatured = async () => {
+    async function loadFeatured() {
       try {
         const res = await fetch('/api/projects');
         if (!res.ok) throw new Error('Erreur lors du chargement des projets');
         const data = await res.json();
-        setFeaturedProjects(data.filter((p) => p.featured).slice(0, 3));
+        setFeatured(data.filter((p) => p.featured).slice(0, 3));
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
-    };
-    fetchFeatured();
+    }
+    loadFeatured();
   }, []);
 
   return (
@@ -96,11 +96,11 @@ export default function Home() {
             Voir tout
           </Link>
         </div>
-        {loading && <Loader />}
+        {isLoading && <Loader />}
         {error && <div className="error-message">{error}</div>}
-        {!loading && !error && (
+        {!isLoading && !error && (
           <div className="projects-grid">
-            {featuredProjects.map((project) => (
+            {featured.map((project) => (
               <ProjectCard key={project._id} project={project} />
             ))}
           </div>

@@ -3,7 +3,7 @@ import Message from '../models/Message.js';
 
 const router = Router();
 
-// POST send a message
+// envoie un message du formulaire de contact
 router.post('/', async (req, res) => {
   try {
     const message = await Message.create(req.body);
@@ -13,8 +13,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET all messages
-router.get('/', async (_req, res) => {
+// liste les messages reçus
+router.get('/', async (req, res) => {
   try {
     const messages = await Message.find().sort({ createdAt: -1 });
     res.json(messages);
